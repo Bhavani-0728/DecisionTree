@@ -322,12 +322,18 @@ for k in ["df", "df_clean"]:
         st.session_state[k] = None
 
 # ── Dirs ───────────────────────────────────────────────────────────────────────
-BASE      = os.path.dirname(os.path.abspath(__file__))
-DATA_DIR  = os.path.join(BASE, "data")
-RAW_DIR       = os.path.join(BASE, "data", "raw")
-PROCESSED_DIR = os.path.join(BASE, "data", "processed")
+# ── Dirs ───────────────────────────────────────────────────────────────────────
+BASE = os.path.dirname(os.path.abspath(__file__))
+
+DATA_DIR = os.path.join(BASE, "data")
+RAW_DIR = os.path.join(DATA_DIR, "raw")
+PROCESSED_DIR = os.path.join(DATA_DIR, "processed")
 MODEL_DIR = os.path.join(BASE, "models")
-os.makedirs(DATA_DIR,  exist_ok=True)
+
+# Create folders automatically
+os.makedirs(DATA_DIR, exist_ok=True)
+os.makedirs(RAW_DIR, exist_ok=True)
+os.makedirs(PROCESSED_DIR, exist_ok=True)
 os.makedirs(MODEL_DIR, exist_ok=True)
 
 # ── Hero ───────────────────────────────────────────────────────────────────────
